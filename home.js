@@ -4,8 +4,4 @@ window.onload = function () {
         localStorage.setItem("pilihanUser",pilihan);
         return pilihan;
     });
-    
 }
-
-
-

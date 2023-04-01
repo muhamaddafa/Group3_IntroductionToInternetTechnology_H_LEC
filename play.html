@@ -3,20 +3,84 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>UMN Gotcha</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container py-4">
+    <div class="container py-4 text-center">
         <div class="content">
             <div class="headingLogo text-center">
                 <img src="Asset/img/logo.png" alt="" class="logo mb-3">
                 <h1>UMNGotcha</h1>
             </div>
             <hr class="garis">
+            <div class="stats">
+                <div class="card">
+                    <div class="cardContent">
+                        <div class="statsBarTop row">
+                            <div class="stats col">
+                                <div class="statsLogo">
+                                    E
+                                </div>
+                                <div class="statsBar">
+                                    <div class="statsPercent" id="statsEat" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="stats col">
+                                <div class="statsLogo">
+                                    S
+                                </div>
+                                <div class="statsBar">
+                                    <div class="statsPercent" id="sleepBar" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="statsBarBot row">
+                            <div class="stats col">
+                                <div class="statsLogo">
+                                    G
+                                </div>
+                                <div class="statsBar">
+                                    <div class="statsPercent" id="gameBar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="stats col">
+                                <div class="statsLogo">
+                                    H
+                                </div>
+                                <div class="statsBar">
+                                    <div class="statsPercent" id="healthBar" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="greeting mt-3">
+                <p>Good Morning</p>
+            </div>
+            <div class="time">
+                <p>Time</p>
+            </div>
             <div class="main">
                 <div class="charPilihan"></div>
+            </div>
+            <div class="statsButton row">
+                <div class="button col">
+                    <button class="btn">Eat</button>
+                </div>
+                <div class="button col">
+                    <button class="btn">Sleep</button>
+                </div>
+            </div>
+            <div class="statsButton row">
+                <div class="button col">
+                    <button class="btn">Game</button>
+                </div>
+                <div class="button col">
+                    <button class="btn">Heal</button>
+                </div>
             </div>
         </div>
     </div>
