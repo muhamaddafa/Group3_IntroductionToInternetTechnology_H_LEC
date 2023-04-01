@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Sigmar+One&display=swap');
+
+* {
+    font-family: 'Secular One', sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+body {
+    background-image: url(Asset/img/Background/Morning.svg);
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel-item img {
+    margin: auto;
+}
+
+/* mainStart */
+.logo {
+    width: 8%;
+}
+
+.choiceChar {
+    width: 25%;
+}
+
+#namaPet {
+    width: 40%;
+    margin: auto;
+}
+
+#namaPet::placeholder {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.btnPlay {
+    padding: 16px 32px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: rgb(2,0,36);
+    background: linear-gradient(35deg, rgba(2,0,36,1) 0%, rgba(139,55,255,1) 0%, rgba(0,142,255,1) 100%);
+    font-style: italic;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+/* Akhir mainStart */
+
+
+@media (max-width: 992px) {
+    .choiceChar {
+        width: 50%;
+    }
+
+    .logo {
+        width: 15%;
+    }
+
+    #namaPet {
+        width: 80%;
+    }
+}
