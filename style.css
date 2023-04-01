@@ -4,6 +4,58 @@
     font-family: 'Secular One', sans-serif;
 }
 
+.card {
+    width: 50%;
+    height: 50%;
+    background: #00FFA0;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: .5vmin solid #05060f;
+    box-shadow: .4rem .4rem #05060f;
+    margin-left: 25%;
+}
+
+.stats{
+    display: flex;
+    padding: 10px;
+}
+.statsLogo{
+    width: 50px;
+    font-size: 16px;
+}
+  
+.statsBar{
+    width: 160px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.statsPercent{
+    background-color: #333;
+    height: 100%;
+}
+
+.btn{
+    font-size: 1.5rem;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background: #00FFA0;
+    box-shadow: 3px 3px black;
+    margin-top: 20px;
+    width: 50%;
+    text-align: center;
+}
+  
+button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
 body, html {
     height: 100%;
 }
