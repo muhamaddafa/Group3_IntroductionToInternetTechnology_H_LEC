@@ -96,20 +96,21 @@ button#btnSound:active {
   border-radius: 1rem;
   border: 0.5vmin solid #05060f;
   box-shadow: 0.4rem 0.4rem #05060f;
-  margin-left: 25%;
+  margin: 0 auto;
 }
 
 .stats {
   display: flex;
   padding: 10px;
 }
+
 .statsLogo {
   width: 50px;
   font-size: 16px;
 }
 
 .statsBar {
-  width: 160px;
+  width: 100%;
   height: 10px;
   background-color: #eee;
   border-radius: 10px;
@@ -136,6 +137,10 @@ button#btnSound:active {
   margin-top: 20px;
   width: 50%;
   text-align: center;
+}
+
+#btnSound {
+  margin: auto auto 40px auto
 }
 
 button:active {
@@ -198,7 +203,7 @@ button:active {
   margin: auto;
 }
 
-#namaPet::placeholder {
+#namaPetForm::placeholder {
   opacity: 0.5;
   font-style: italic;
 }
@@ -231,8 +236,16 @@ a {
   .imagePilihan {
     width: 50%;
   }
+  
+  .btn {
+    width: 100%;
+  }
 
-  #namaPet {
+  .card {
+    width: 100%;
+  }
+
+  #namaPetForm {
     width: 80%;
   }
 

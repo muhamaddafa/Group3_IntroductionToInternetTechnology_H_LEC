@@ -94,9 +94,9 @@ $(".btnEat").click(function () {
   if (eatBar > 100) {
     eatBar = 101;
     alert("Sudah Kenyang");
-    $("#statsEat").attr("style", "width: " + eatBar + "%");
+    $("#statsEat").attr("style", "width: " + eatBar + "%; transition: 0.5s ease-in-out;");
   } else {
-    $("#statsEat").attr("style", "width: " + eatBar + "%");
+    $("#statsEat").attr("style", "width: " + eatBar + "%; transition: 0.5s ease-in-out;");
   }
 });
 
@@ -118,7 +118,7 @@ function penguranganEatBar() {
 $(".btnSleep").click(function () {
   sleepBar = 101;
   alert("Sudah Puas Tidur");
-  $("#sleepBar").attr("style", "width: " + sleepBar + "%");
+  $("#sleepBar").attr("style", "width: " + sleepBar + "%; transition: 0.5s ease-in-out;");
 });
 
 function penguranganSleepBar() {
