@@ -9,8 +9,11 @@ var hours = 0;
 var hariBertahan = 0;
 var level = 1;
 var keterangan = "Baby";
+var tesVar = 700;
+let bgmusic = $("#bgmusic")[0];
+bgmusic.play();
+bgmusic.volume = 0.1;
 
-console.log(minutes);
 // Char User
 var gambar = $("<img/>", {
   class: "imagePilihan",
@@ -21,22 +24,6 @@ $(".charPilihan").append(gambar);
 // Salam
 var salam = $("<p/>", {
   class: salam,
-});
-
-// Button Regen
-$(".btnEat").click(function () {
-  eatBar = eatBar + 20;
-  $("#statsEat").attr("style", "width: " + eatBar + "%");
-});
-
-$(".btnSleep").click(function () {
-  sleepBar = sleepBar + 70;
-  $("#statsEat").attr("style", "width: " + sleepBar + "%");
-});
-
-$(".btnHealth").click(function () {
-  healthBar = healthBar + 20;
-  $("#statsEat").attr("style", "width: " + healthBar + "%");
 });
 
 // Clock
@@ -96,178 +83,97 @@ function clock() {
     $("#textLogo").addClass("text-light");
   }
 }
-intervalClock = setInterval(clock, 300);
 
 // Code Dibawah ga jalan???????
-if (level === 1) {
-  // Level 1
-  var eatBarIntv = setInterval(penguranganEatBar, 700);
-  function penguranganEatBar() {
-    eatBar = eatBar - 1;
+
+var intervalClock = setInterval(clock, 100);
+var eatBarIntv = setInterval(penguranganEatBar, 1000);
+var healthBarIntv = setInterval(penguranganHealthBar, 1000);
+var gameBarIntv = setInterval(penguranganGameBar, 1000);
+var sleepBarIntv = setInterval(penguranganSleepBar, 1500);
+
+$(".btnEat").click(function () {
+  eatBar = eatBar + 20;
+  if (eatBar > 100) {
+    eatBar = 101;
+    alert("Sudah Kenyang");
     $("#statsEat").attr("style", "width: " + eatBar + "%");
-    if (eatBar === 0) {
-      clearInterval(eatBarIntv);
-    }
-  }
-
-  var sleepBarIntv = setInterval(penguranganSleepBar, 1000);
-  function penguranganSleepBar() {
-    sleepBar = sleepBar - 1;
-    $("#sleepBar").attr("style", "width: " + sleepBar + "%");
-    if (sleepBar === 0) {
-      clearInterval(sleepBarIntv);
-    }
-  }
-
-  var gameBarIntv = setInterval(penguranganGameBar, 1500);
-  function penguranganGameBar() {
-    gameBar = gameBar - 1;
-    $("#gameBar").attr("style", "width: " + gameBar + "%");
-    if (gameBar === 0) {
-      clearInterval(gameBarIntv);
-    }
-  }
-
-  var healthBarIntv = setInterval(penguranganHealthBar, 1000);
-  function penguranganHealthBar() {
-    if (sleepBar === 0) {
-      healthBar = healthBar - 5;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (eatBar === 0) {
-      healthBar = healthBar - 2;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (gameBar === 0) {
-      healthBar = healthBar - 1;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (healthBar <= 0) {
-      clearInterval(healthBarIntv);
-      clearInterval(eatBarIntv);
-      clearInterval(gameBarIntv);
-      clearInterval(sleepBarIntv);
-      clearInterval(intervalClock);
-      alert("You Die!!!!!");
-      $("#healthBar").attr("style", "width: " + 0 + "%");
-      $("#statsEat").attr("style", "width: " + 0 + "%");
-      $("#gameBar").attr("style", "width: " + 0 + "%");
-      $("#sleepBar").attr("style", "width: " + 0 + "%");
-    }
-  }
-  // Akhir Level 1
-} else if (level === 2) {
-  // Level 2
-  var eatBarIntv = setInterval(penguranganEatBar, 1000);
-  function penguranganEatBar() {
-    eatBar = eatBar - 1;
+  } else {
     $("#statsEat").attr("style", "width: " + eatBar + "%");
-    if (eatBar === 0) {
-      clearInterval(eatBarIntv);
-    }
   }
+});
 
-  var sleepBarIntv = setInterval(penguranganSleepBar, 1200);
-  function penguranganSleepBar() {
-    sleepBar = sleepBar - 1;
-    $("#sleepBar").attr("style", "width: " + sleepBar + "%");
-    if (sleepBar === 0) {
-      clearInterval(sleepBarIntv);
-    }
-  }
-
-  var gameBarIntv = setInterval(penguranganGameBar, 800);
-  function penguranganGameBar() {
-    gameBar = gameBar - 1;
-    $("#gameBar").attr("style", "width: " + gameBar + "%");
-    if (gameBar === 0) {
-      clearInterval(gameBarIntv);
-    }
-  }
-
-  var healthBarIntv = setInterval(penguranganHealthBar, 1000);
-  function penguranganHealthBar() {
-    if (sleepBar === 0) {
-      healthBar = healthBar - 5;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (eatBar === 0) {
-      healthBar = healthBar - 2;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (gameBar === 0) {
-      healthBar = healthBar - 1;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (healthBar <= 0) {
-      clearInterval(healthBarIntv);
-      clearInterval(eatBarIntv);
-      clearInterval(gameBarIntv);
-      clearInterval(sleepBarIntv);
-      clearInterval(intervalClock);
-      alert("You Die!!!!!");
-      $("#healthBar").attr("style", "width: " + 0 + "%");
-      $("#statsEat").attr("style", "width: " + 0 + "%");
-      $("#gameBar").attr("style", "width: " + 0 + "%");
-      $("#sleepBar").attr("style", "width: " + 0 + "%");
-    }
-  }
-  // Akhir Level 2
-} else {
-  // Level 3
-  var eatBarIntv = setInterval(penguranganEatBar, 800);
-  function penguranganEatBar() {
+function penguranganEatBar() {
+  if (level === 1) {
     eatBar = eatBar - 1;
-    $("#statsEat").attr("style", "width: " + eatBar + "%");
-    if (eatBar === 0) {
-      clearInterval(eatBarIntv);
-    }
+  } else if (level === 2) {
+    eatBar = eatBar - 2;
+    testVar = 10;
+  } else {
+    eatBar = eatBar - 3;
   }
+  $("#statsEat").attr("style", "width: " + eatBar + "%");
+  if (eatBar <= 0) {
+    $("#statsEat").attr("style", "width: " + 0 + "%");
+  }
+}
 
-  var sleepBarIntv = setInterval(penguranganSleepBar, 700);
-  function penguranganSleepBar() {
+$(".btnSleep").click(function () {
+  sleepBar = 101;
+  alert("Sudah Puas Tidur");
+  $("#statsEat").attr("style", "width: " + sleepBar + "%");
+});
+
+function penguranganSleepBar() {
+  if (level === 1) {
     sleepBar = sleepBar - 1;
-    $("#sleepBar").attr("style", "width: " + sleepBar + "%");
-    if (sleepBar === 0) {
-      clearInterval(sleepBarIntv);
-    }
+  } else if (level === 2) {
+    sleepBar = sleepBar - 2;
+  } else {
+    sleepBar = sleepBar - 3;
   }
+  $("#sleepBar").attr("style", "width: " + sleepBar + "%");
+  if (sleepBar <= 0) {
+    $("#sleepBar").attr("style", "width: " + 0 + "%");
+  }
+}
 
-  var gameBarIntv = setInterval(penguranganGameBar, 2000);
-  function penguranganGameBar() {
-    gameBar = gameBar - 1;
-    $("#gameBar").attr("style", "width: " + gameBar + "%");
-    if (gameBar === 0) {
-      clearInterval(gameBarIntv);
-    }
+function penguranganGameBar() {
+  gameBar = gameBar - 1;
+  $("#gameBar").attr("style", "width: " + gameBar + "%");
+  if (gameBar <= 0) {
+    clearInterval(gameBarIntv);
   }
+}
 
-  var healthBarIntv = setInterval(penguranganHealthBar, 1000);
-  function penguranganHealthBar() {
-    if (sleepBar === 0) {
-      healthBar = healthBar - 5;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (eatBar === 0) {
-      healthBar = healthBar - 2;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (gameBar === 0) {
-      healthBar = healthBar - 1;
-      $("#healthBar").attr("style", "width: " + healthBar + "%");
-    }
-    if (healthBar <= 0) {
-      clearInterval(healthBarIntv);
-      clearInterval(eatBarIntv);
-      clearInterval(gameBarIntv);
-      clearInterval(sleepBarIntv);
-      clearInterval(intervalClock);
-      alert("You Die!!!!!");
-      $("#healthBar").attr("style", "width: " + 0 + "%");
-      $("#statsEat").attr("style", "width: " + 0 + "%");
-      $("#gameBar").attr("style", "width: " + 0 + "%");
-      $("#sleepBar").attr("style", "width: " + 0 + "%");
-    }
+$(".btnHealth").click(function () {
+  healthBar = healthBar + 20;
+  $("#statsEat").attr("style", "width: " + healthBar + "%");
+});
+
+function penguranganHealthBar() {
+  if (sleepBar <= 0) {
+    healthBar = healthBar - 5;
+    $("#healthBar").attr("style", "width: " + healthBar + "%");
   }
-  // Akhir Level 3
+  if (eatBar <= 0) {
+    healthBar = healthBar - 2;
+    $("#healthBar").attr("style", "width: " + healthBar + "%");
+  }
+  if (gameBar <= 0) {
+    healthBar = healthBar - 1;
+    $("#healthBar").attr("style", "width: " + healthBar + "%");
+  }
+  if (healthBar <= 0) {
+    clearInterval(healthBarIntv);
+    clearInterval(eatBarIntv);
+    clearInterval(gameBarIntv);
+    clearInterval(sleepBarIntv);
+    clearInterval(intervalClock);
+    alert("You Die!!!!!");
+    $("#healthBar").attr("style", "width: " + 0 + "%");
+    $("#statsEat").attr("style", "width: " + 0 + "%");
+    $("#gameBar").attr("style", "width: " + 0 + "%");
+    $("#sleepBar").attr("style", "width: " + 0 + "%");
+  }
 }
