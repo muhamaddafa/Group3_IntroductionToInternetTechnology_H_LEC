@@ -11,7 +11,7 @@ const btnSound = document.getElementById("btnSound");
 const audio = document.getElementById("audio");
 
 audio.volume = 0.15;
-btnSound.addEventListener("click", function() {
+btnSound.addEventListener("click", function () {
   if (audio.paused) {
     audio.play();
     btnSound.classList.remove("sound-off");
