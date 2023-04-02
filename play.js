@@ -9,7 +9,9 @@ var hours = 0;
 var hariBertahan = 0;
 var level = 1;
 var keterangan = "Baby";
-var tesVar = 700;
+let bgmusic = $("#bgmusic")[0];
+bgmusic.play();
+bgmusic.volume = 0.1;
 
 // Char User
 var gambar = $("<img/>", {
@@ -81,8 +83,6 @@ function clock() {
   }
 }
 
-// Code Dibawah ga jalan???????
-
 var intervalClock = setInterval(clock, 100);
 var eatBarIntv = setInterval(penguranganEatBar, 1000);
 var healthBarIntv = setInterval(penguranganHealthBar, 1000);
@@ -94,9 +94,9 @@ $(".btnEat").click(function () {
   if (eatBar > 100) {
     eatBar = 101;
     alert("Sudah Kenyang");
-    $("#statsEat").attr("style", "width: " + eatBar + "%");
+    $("#statsEat").attr("style", "width: " + eatBar + "%, transition: 0.7s ease-in-out;");
   } else {
-    $("#statsEat").attr("style", "width: " + eatBar + "%");
+    $("#statsEat").attr("style", "width: " + eatBar + "%; transition: 0.7s ease-in-out;");
   }
 });
 
@@ -105,11 +105,11 @@ function penguranganEatBar() {
     eatBar = eatBar - 1;
   } else if (level === 2) {
     eatBar = eatBar - 2;
-    testVar = 10;
   } else {
     eatBar = eatBar - 3;
   }
   $("#statsEat").attr("style", "width: " + eatBar + "%");
+  console.log(hours);
   if (eatBar <= 0) {
     $("#statsEat").attr("style", "width: " + 0 + "%");
   }
