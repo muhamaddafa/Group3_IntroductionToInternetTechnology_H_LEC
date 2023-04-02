@@ -1,7 +1,8 @@
 window.onload = function () {
     $(".btnPlay").click(function () {
-        pilihan =  $(".active img").attr("alt");
+        var pilihan =  $(".active img").attr("alt");
+        var namaPet = $("#namaPetForm").val();
         localStorage.setItem("pilihanUser",pilihan);
-        return pilihan;
+        localStorage.setItem("namaPet", namaPet);
     });
 }

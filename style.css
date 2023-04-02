@@ -1,122 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Sigmar+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&family=Sigmar+One&display=swap");
 
 * {
-    font-family: 'Secular One', sans-serif;
+  font-family: "Secular One", sans-serif;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.charPilihan {
+  position: relative;
+  animation: float 3s infinite;
 }
 
 .card {
-    width: 50%;
-    height: 50%;
-    background: #00FFA0;
-    padding: 1rem;
-    border-radius: 1rem;
-    border: .5vmin solid #05060f;
-    box-shadow: .4rem .4rem #05060f;
-    margin-left: 25%;
+  width: 50%;
+  height: 50%;
+  background: #00ffa0;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  margin-left: 25%;
 }
 
-.stats{
-    display: flex;
-    padding: 10px;
+.stats {
+  display: flex;
+  padding: 10px;
 }
-.statsLogo{
-    width: 50px;
-    font-size: 16px;
-}
-  
-.statsBar{
-    width: 160px;
-    height: 10px;
-    background-color: #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 5px;
+.statsLogo {
+  width: 50px;
+  font-size: 16px;
 }
 
-.statsPercent{
-    background-color: #333;
-    height: 100%;
+.statsBar {
+  width: 160px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
 }
 
-.btn{
-    font-size: 1.5rem;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: 2px solid black;
-    background: #00FFA0;
-    box-shadow: 3px 3px black;
-    margin-top: 20px;
-    width: 50%;
-    text-align: center;
+.statsPercent {
+  background-color: #333;
+  height: 100%;
 }
-  
+
+.imagePilihan {
+  width: 25%;
+}
+
+.btn {
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background: #00ffa0;
+  box-shadow: 3px 3px black;
+  margin-top: 20px;
+  width: 50%;
+  text-align: center;
+}
+
 button:active {
-    box-shadow: none;
-    transform: translate(3px, 3px);
+  box-shadow: none;
+  transform: translate(3px, 3px);
 }
 
-body, html {
-    height: 100%;
+.bgImagePagi {
+  background-image: url(Asset/img/Background/Morning.svg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
+  position: relative;
 }
-body {
-    background-image: url(Asset/img/Background/Morning.svg);
-    background-size: cover;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+
+.bgImageSiang {
+  background-image: url(Asset/img/Background/Afternoon.svg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
+}
+
+.bgImageSore {
+  background-image: url(Asset/img/Background/Evening.svg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
+}
+
+.bgImageMalam {
+  background-image: url(Asset/img/Background/Night.svg);
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
 }
 
 .carousel-item img {
-    margin: auto;
+  margin: auto;
 }
 
 /* mainStart */
 .logo {
-    width: 8%;
+  width: 8%;
 }
 
 .choiceChar {
-    width: 25%;
+  width: 25%;
 }
 
-#namaPet {
-    width: 40%;
-    margin: auto;
+#namaPetForm {
+  width: 40%;
+  margin: auto;
 }
 
 #namaPet::placeholder {
-    opacity: 0.5;
-    font-style: italic;
+  opacity: 0.5;
+  font-style: italic;
 }
 
 .btnPlay {
-    padding: 16px 32px;
-    border: 2px solid white;
-    border-radius: 10px;
-    background: rgb(2,0,36);
-    background: linear-gradient(35deg, rgba(2,0,36,1) 0%, rgba(139,55,255,1) 0%, rgba(0,142,255,1) 100%);
-    font-style: italic;
-    color: white;
+  padding: 16px 32px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(35deg, rgba(2, 0, 36, 1) 0%, rgba(139, 55, 255, 1) 0%, rgba(0, 142, 255, 1) 100%);
+  font-style: italic;
+  color: white;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 /* Akhir mainStart */
 
-
 @media (max-width: 992px) {
-    .choiceChar {
-        width: 50%;
-    }
+  .choiceChar {
+    width: 50%;
+  }
 
-    .logo {
-        width: 15%;
-    }
+  .logo {
+    width: 15%;
+  }
 
-    #namaPet {
-        width: 80%;
-    }
+  .imagePilihan {
+    width: 50%;
+  }
+
+  #namaPet {
+    width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn {
+    font-size: 1.5rem;
+  }
 }
