@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <audio id="bgmusic" autoplay="autoplay" loop="loop"><source src="Asset/sound/Play.mp3"></source></audio>
+    <audio id="audio" autoplay="autoplay" loop="loop"><source src="Asset/sound/Play.mp3"></source></audio>
     <div id="bungkus" class="bgImageMalam py-5 text-center">
       <div class="content container">
         <div class="headingLogo text-center">
@@ -16,18 +16,21 @@
           <h1 id="textLogo">UMNGotcha</h1>
         </div>
         <hr class="garis" />
+        <button id="btnSound" class="btnSound"><img src="Asset/soundOn.png"></button>
         <div class="stats">
           <div class="card">
             <div class="cardContent text-center">
               <div class="statsBarTop row">
                 <div class="stats col">
-                  <div class="statsLogo">E</div>
+                  <div class="statsLogo">
+                    <img class="eatIcon" src="Asset/food.png">
+                  </div>
                   <div class="statsBar">
                     <div class="statsPercent" id="statsEat" style="width: 100%"></div>
                   </div>
                 </div>
                 <div class="stats col">
-                  <div class="statsLogo">S</div>
+                  <div class="statsLogo"><img class="sleepIcon" src="Asset/sleep.png"></div>
                   <div class="statsBar">
                     <div class="statsPercent" id="sleepBar" style="width: 100%"></div>
                   </div>
@@ -35,13 +38,13 @@
               </div>
               <div class="statsBarBot row">
                 <div class="stats col">
-                  <div class="statsLogo">G</div>
+                  <div class="statsLogo"><img class="gameIcon" src="Asset/game.png"></div>
                   <div class="statsBar">
                     <div class="statsPercent" id="gameBar" style="width: 100%"></div>
                   </div>
                 </div>
                 <div class="stats col">
-                  <div class="statsLogo">H</div>
+                  <div class="statsLogo"><img class="healthIcon" src="Asset/health.png"></div>
                   <div class="statsBar">
                     <div class="statsPercent" id="healthBar" style="width: 100%"></div>
                   </div>
