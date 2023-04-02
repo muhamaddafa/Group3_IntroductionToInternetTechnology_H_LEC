@@ -16,6 +16,73 @@
   }
 }
 
+#btnSound.sound-on img {
+  content: url("Asset/soundOn.png");
+}
+
+#btnSound.sound-off img {
+  content: url("Asset/soundOff.png");
+}
+
+button.btnSound{
+  margin-bottom: 30px;
+  margin-right: 90%;
+}
+
+button#btnSound {
+  padding: 1.25em 2em;
+  background: #00ffa0;
+  border: 2px solid black;
+  border-radius: 0.75em;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ }
+
+button#btnSound::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00ffa0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px black;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+ 
+button#btnSound:hover {
+  transform: translate(0, 0.25em);
+}
+ 
+button#btnSound:active {
+  transform: translate(0em, 0.75em);
+}
+
+.eatIcon {
+  width: 130%;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.sleepIcon {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.gameIcon {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.healthIcon {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
 .charPilihan {
   position: relative;
   animation: float 3s infinite;
@@ -47,7 +114,7 @@
   background-color: #eee;
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .statsPercent {
@@ -144,7 +211,7 @@ button:active {
   background: linear-gradient(35deg, rgba(2, 0, 36, 1) 0%, rgba(139, 55, 255, 1) 0%, rgba(0, 142, 255, 1) 100%);
   font-style: italic;
   color: white;
-}
+} 
 
 a {
   text-decoration: none;
@@ -168,10 +235,22 @@ a {
   #namaPet {
     width: 80%;
   }
+
+  #btnSound img{
+    width: 20px;
+  } 
+
+  #btnSound{
+    width: 90px;
+  }
 }
 
 @media (min-width: 992px) {
   .btn {
     font-size: 1.5rem;
+  }
+
+  #btnSound img{
+    width: 30px;
   }
 }

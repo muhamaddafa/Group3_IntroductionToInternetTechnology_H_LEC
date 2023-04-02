@@ -10,9 +10,6 @@ var hariBertahan = 0;
 var level = 1;
 var keterangan = "Baby";
 var tesVar = 700;
-let bgmusic = $("#bgmusic")[0];
-bgmusic.play();
-bgmusic.volume = 0.1;
 
 // Char User
 var gambar = $("<img/>", {
@@ -121,7 +118,7 @@ function penguranganEatBar() {
 $(".btnSleep").click(function () {
   sleepBar = 101;
   alert("Sudah Puas Tidur");
-  $("#statsEat").attr("style", "width: " + sleepBar + "%");
+  $("#sleepBar").attr("style", "width: " + sleepBar + "%");
 });
 
 function penguranganSleepBar() {
@@ -146,9 +143,9 @@ function penguranganGameBar() {
   }
 }
 
-$(".btnHealth").click(function () {
+$(".btnHeal").click(function () {
   healthBar = healthBar + 20;
-  $("#statsEat").attr("style", "width: " + healthBar + "%");
+  $("#healthBar").attr("style", "width: " + healthBar + "%");
 });
 
 function penguranganHealthBar() {
@@ -177,3 +174,19 @@ function penguranganHealthBar() {
     $("#sleepBar").attr("style", "width: " + 0 + "%");
   }
 }
+
+const btnSound = document.getElementById("btnSound");
+const audio = document.getElementById("audio");
+
+audio.volume = 0.15;
+btnSound.addEventListener("click", function() {
+  if (audio.paused) {
+    audio.play();
+    btnSound.classList.remove("sound-off");
+    btnSound.classList.add("sound-on");
+  } else {
+    audio.pause();
+    btnSound.classList.remove("sound-on");
+    btnSound.classList.add("sound-off");
+  }
+});
