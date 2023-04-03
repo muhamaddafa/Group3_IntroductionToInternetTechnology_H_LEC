@@ -1,6 +1,9 @@
 var pilihanUser = localStorage.getItem("pilihanUser");
 var namaPet = localStorage.getItem("namaPet");
 var healthBar = 100;
+const btnSound = document.getElementById("btnSound");
+const audio = document.getElementById("audio");
+audio.volume = 0.15;
 
 if (localStorage.getItem("gameStat") === "") {
   var gameBar = 50;
@@ -28,6 +31,18 @@ var gambar = $("<img/>", {
   src: "Asset/img/Character/" + keterangan + "_" + pilihanUser + ".svg",
 });
 $(".charPilihan").append(gambar);
+
+btnSound.addEventListener("click", function () {
+  if (audio.paused) {
+    audio.play();
+    btnSound.classList.remove("sound-off");
+    btnSound.classList.add("sound-on");
+  } else {
+    audio.pause();
+    btnSound.classList.remove("sound-on");
+    btnSound.classList.add("sound-off");
+  }
+});
 
 // Salam
 var salam = $("<p/>", {
@@ -267,20 +282,4 @@ $(".btnGame").click(function () {
   localStorage.setItem("minutes", minutes);
   localStorage.setItem("day", hariBertahan);
   window.location.href = "game.html";
-});
-
-const btnSound = document.getElementById("btnSound");
-const audio = document.getElementById("audio");
-
-audio.volume = 0.15;
-btnSound.addEventListener("click", function () {
-  if (audio.paused) {
-    audio.play();
-    btnSound.classList.remove("sound-off");
-    btnSound.classList.add("sound-on");
-  } else {
-    audio.pause();
-    btnSound.classList.remove("sound-on");
-    btnSound.classList.add("sound-off");
-  }
 });
