@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="time mt-3">
-          <p class="jam">Time Left : </p>
+          <p class="jam" id="timer"></p>
         </div>
         <div class="gameBox">
             <img src="Asset/img/Character/Dewasa_Kucing_Game.svg" alt="" id="char">
@@ -66,20 +66,20 @@
         <div class="btnArrow mt-3">
             <div class="arrowKey row">
                 <div class="arrowUp col">
-                    <button id="btnUp" class="arrow" onmousedown="moveUp()" onmouseup="stopMove()" ontouchstart="moveUp()">W</button>
+                    <button id="btnUp" class="arrow" onmousedown="startMoveUp()" onmouseup="stopMove()">W</button>
                 </div>
             </div>
             <div class="arrowKey row">
                 <div class="arrowLeft col text-end pe-3">
-                  <button id="btnLeft" class="arrow" onmousedown="moveLeft()" onmouseup="stopMove()" ontouchstart="moveLeft()"">A</button>
+                  <button id="btnLeft" class="arrow" onmousedown="startMoveLeft()" onmouseup="stopMove()">A</button>
                 </div>
                 <div class="arrowRight col text-start">
-                  <button id="btnRight" class="arrow" onmousedown="moveRight()" onmouseup="stopMove()" ontouchstart="moveRight()"">D</button>
+                  <button id="btnRight" class="arrow" onmousedown="startMoveRight()" onmouseup="stopMove()">D</button>
                 </div>
             </div>
             <div class="arrowKey row">
                 <div class="arrowDown col">
-                  <button id="btnDown" class="arrow" onmousedown="moveDown()" onmouseup="stopMove()" ontouchstart="moveDown()">S</button>
+                  <button id="btnDown" class="arrow" onmousedown="startMoveDown()" onmouseup="stopMove()">S</button>
                 </div>
             </div>
         </div>
