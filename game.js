@@ -58,30 +58,30 @@ function randPos() {
 
 window.addEventListener("keydown", (e) => {
   switch (e.keyCode) {
-    case 37:
+    case 65:
       char.style.left = parseInt(char.style.left) - 10 + "px";
       if (parseInt(char.style.left) < 0) {
         char.style.left = 0;
       }
-      char.style.transform = "scaleX(1)";
-      checkForCollision();
-      break;
-    case 39:
-      char.style.left = parseInt(char.style.left) + 10 + "px";
-      if (parseInt(char.style.left) > 550) {
-        char.style.left = parseInt(char.style.left) - 10 + "px";
-      }
       char.style.transform = "scaleX(-1)";
       checkForCollision();
       break;
-    case 38:
+    case 68:
+      char.style.left = parseInt(char.style.left) + 10 + "px";
+      if (parseInt(char.style.left) > 830) {
+        char.style.left = parseInt(char.style.left) - 10 + "px";
+      }
+      char.style.transform = "scaleX(1)";
+      checkForCollision();
+      break;
+    case 87:
       char.style.top = parseInt(char.style.top) - 10 + "px";
       if (parseInt(char.style.top) < 0) {
         char.style.top = 0;
       }
       checkForCollision();
       break;
-    case 40:
+    case 83:
       char.style.top = parseInt(char.style.top) + 10 + "px";
       if (parseInt(char.style.top) > 150) {
         char.style.top = parseInt(char.style.top) - 10 + "px";
@@ -94,39 +94,38 @@ window.addEventListener("keydown", (e) => {
 });
 
 function moveUp() {
-  char.style.top = parseInt(char.style.top) - 10 + "px";
-  if (parseInt(char.style.top) < 0) {
+    char.style.top = parseInt(char.style.top) - 10 + "px";
+    if (parseInt(char.style.top) < 0) {
     char.style.top = 0;
   }
-  checkForCollision();
-}
-
-function moveDown() {
-  char.style.top = parseInt(char.style.top) + 10 + "px";
-  if (parseInt(char.style.top) > 240) {
-    char.style.top = parseInt(char.style.top) - 10 + "px";
+    checkForCollision();
   }
-  checkForCollision();
-}
-
-function moveLeft() {
-  char.style.left = parseInt(char.style.left) - 10 + "px";
-  if (parseInt(char.style.left) < 0) {
-    char.style.left = 0;
+  
+  function moveDown() {
+    char.style.top = parseInt(char.style.top) + 10 + "px";
+    if (parseInt(char.style.top) > 240) {
+    char.style.top = parseInt(char.style.top) - 10 + 'px';
   }
-  char.style.transform = "scaleX(1)";
-  checkForCollision();
-}
-
-function moveRight() {
-  char.style.left = parseInt(char.style.left) + 10 + "px";
-  if (parseInt(char.style.left) > 830) {
+    checkForCollision();
+  }
+  
+  function moveLeft() {
     char.style.left = parseInt(char.style.left) - 10 + "px";
-
+    if (parseInt(char.style.left) < 0) {
+      char.style.left = 0;
+    }  
     char.style.transform = "scaleX(-1)";
     checkForCollision();
   }
-}
+  
+  function moveRight() {
+      char.style.transform = "scaleX(1)";
+      char.style.left = parseInt(char.style.left) + 10 + "px";
+      if (parseInt(char.style.left) > 830) {
+        char.style.left = parseInt(char.style.left) - 10 + 'px';
+      }  
+      checkForCollision();
+  }
 
 function startMoveUp() {
   moveInterval = setInterval(moveUp, 50);
