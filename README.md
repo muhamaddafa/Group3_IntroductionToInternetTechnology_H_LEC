@@ -25,4 +25,5 @@ The Project For MidTerm Exam (Introduction To Internet Technology) - H - LEC
 <ul>
   <li>Bootstrap v5.3: https://getbootstrap.com/docs/5.3/getting-started/introduction/</li>
   <li>Avatar Icon: https://www.figma.com/community/file/996834837432309369/50-free-animal-icons</li>
+  <li>Background Image: https://www.vecteezy.com/free-vector/nature</li>
 </ul>
