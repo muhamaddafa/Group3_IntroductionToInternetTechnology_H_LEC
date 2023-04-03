@@ -89,6 +89,10 @@ var healthBarIntv = setInterval(penguranganHealthBar, 1000);
 var gameBarIntv = setInterval(penguranganGameBar, 1000);
 var sleepBarIntv = setInterval(penguranganSleepBar, 1500);
 
+$(".btnGame").click(function () {
+  window.location.href = "game.html";
+});
+
 $(".btnEat").click(function () {
   eatBar = eatBar + 20;
   if (eatBar > 100) {

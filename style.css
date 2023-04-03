@@ -88,6 +88,17 @@ button#btnSound:active {
   animation: float 3s infinite;
 }
 
+.gameBox{
+  width: 80%;
+  height: 300px;
+  background: #00ffa0;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  margin: 0 auto;
+}
+
 .card {
   width: 50%;
   height: 50%;
@@ -125,6 +136,18 @@ button#btnSound:active {
 
 .imagePilihan {
   width: 25%;
+}
+
+.arrow{
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background: #00ffa0;
+  box-shadow: 3px 3px black;
+  margin-top: 20px;
+  width: 80px;
+  text-align: center;
 }
 
 .btn {
