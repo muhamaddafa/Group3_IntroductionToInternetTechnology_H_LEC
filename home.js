@@ -9,13 +9,14 @@ minutes = "";
 
 window.onload = function () {
   $(".btnPlay").click(function () {
+    var namaPetHewan = $("#namaPetForm").val();
     var pilihan = $(".active img").attr("alt");
-    var namaPet = $("#namaPetForm").val();
-    if (namaPet == "") {
+    if (namaPetHewan === "") {
       alert("Masukkan Nama");
       location.reload();
     } else {
       localStorage.setItem("pilihanUser", pilihan);
+      localStorage.setItem("namaHewan", namaPetHewan);
       localStorage.setItem("gameStat", gameBar);
       localStorage.setItem("eatStat", eatBar);
       localStorage.setItem("sleepStat", sleepBar);
@@ -24,7 +25,6 @@ window.onload = function () {
       localStorage.setItem("hours", hours);
       localStorage.setItem("minutes", minutes);
       localStorage.setItem("day", day);
-      localStorage.setItem("namaPet", namaPet);
     }
   });
 };

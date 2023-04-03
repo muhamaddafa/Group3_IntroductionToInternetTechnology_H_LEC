@@ -1,5 +1,5 @@
 var pilihanUser = localStorage.getItem("pilihanUser");
-var namaPet = localStorage.getItem("namaPet");
+var nama = localStorage.getItem("namaHewan");
 var healthBar = 100;
 const btnSound = document.getElementById("btnSound");
 const audio = document.getElementById("audio");
@@ -79,28 +79,28 @@ function clock() {
   $(".jam").text(textWaktu);
   var clockTime = parseInt(hours.toString().padStart(2, "0") + minutes.toString().padStart(2, "0"));
   if (clockTime >= 2100 || clockTime < 400) {
-    salam.text("Good Night, " + namaPet);
+    salam.text("Good Night, " + nama);
     $(".greeting").append(salam);
     $("#bungkus").removeClass();
     $("#bungkus").addClass("bgImageMalam py-5 text-center");
     $("#pesan").addClass("text-light");
     $("#textLogo").addClass("text-light");
   } else if (clockTime >= 400 && clockTime < 1100) {
-    salam.text("Good Morning, " + namaPet);
+    salam.text("Good Morning, " + nama);
     $(".greeting").append(salam);
     $("#bungkus").removeClass();
     $("#bungkus").addClass("bgImagePagi py-5 text-center");
     $("#pesan").removeClass();
     $("#textLogo").removeClass();
   } else if (clockTime >= 1100 && clockTime < 1500) {
-    salam.text("Good Afternoon, " + namaPet);
+    salam.text("Good Afternoon, " + nama);
     $(".greeting").append(salam);
     $("#bungkus").removeClass();
     $("#bungkus").addClass("bgImageSiang py-5 text-center");
     $("#pesan").removeClass();
     $("#textLogo").removeClass();
   } else if (clockTime >= 1500 && clockTime < 2100) {
-    salam.text("Good Evening, " + namaPet);
+    salam.text("Good Evening, " + nama);
     $(".greeting").append(salam);
     $("#bungkus").removeClass();
     $("#bungkus").addClass("bgImageSore py-5 text-center");
