@@ -32,14 +32,14 @@ function clock() {
   if (hours === 24) {
     hours = 0;
     hariBertahan++;
-    if (hariBertahan > 0 && hariBertahan < 2) {
+    if (hariBertahan > 0 && hariBertahan <= 2) {
       keterangan = "Anak";
     } else if (hariBertahan > 2) {
       keterangan = "Dewasa";
     }
     $(".imagePilihan").attr("src", "Asset/img/Character/" + keterangan + "_" + pilihanUser + ".svg");
   }
-  if (hariBertahan > 0 && hariBertahan < 2) {
+  if (hariBertahan > 0 && hariBertahan <= 2) {
     level = 2;
     $(".levelUser").text("Level " + level + " - " + keterangan + " " + "(Day " + (hariBertahan + 1) + ")");
   } else if (hariBertahan > 2) {
