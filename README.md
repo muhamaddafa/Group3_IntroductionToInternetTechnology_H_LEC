@@ -21,6 +21,8 @@ The Project For MidTerm Exam (Introduction To Internet Technology) - H - LEC
 <h2>Batasan:</h2>
 <p><b>1. Jumlah Avatar</b></br>(Pemain hanya dapat memilih 3 Avatar)</p>
 
-<h2>DEMO GAME</h2>
-<p>Tampilan Awal Saat Memasuki Link Game</p>
-![image](https://user-images.githubusercontent.com/87351834/229427076-d01a864b-93cb-4f5d-bedd-e958635e7b8a.png)
+<h2>Referensi</h2>
+<ul>
+  <li>Bootstrap v5.3: https://getbootstrap.com/docs/5.3/getting-started/introduction/</li>
+  <li>Avatar Icon: https://www.figma.com/community/file/996834837432309369/50-free-animal-icons</li>
+</ul>
