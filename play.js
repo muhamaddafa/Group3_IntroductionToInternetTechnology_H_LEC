@@ -1,14 +1,26 @@
 var pilihanUser = localStorage.getItem("pilihanUser");
 var namaPet = localStorage.getItem("namaPet");
-var eatBar = 50;
-var sleepBar = 50;
-var gameBar = 50;
 var healthBar = 100;
-var minutes = 0;
-var hours = 0;
-var hariBertahan = 0;
-var level = 1;
-var keterangan = "Bayi";
+
+if (localStorage.getItem("gameStat") === "") {
+  var gameBar = 50;
+  var sleepBar = 50;
+  var eatBar = 50;
+  var level = 1;
+  var keterangan = "Bayi";
+  var hariBertahan = 0;
+  var hours = 0;
+  var minutes = 0;
+} else {
+  var gameBar = localStorage.getItem("gameStat");
+  var sleepBar = localStorage.getItem("sleepStat");
+  var eatBar = localStorage.getItem("eatStat");
+  var level = localStorage.getItem("level");
+  var keterangan = localStorage.getItem("keterangan");
+  var hours = localStorage.getItem("hours");
+  var minutes = localStorage.getItem("minutes");
+  var hariBertahan = parseInt(localStorage.getItem("day"));
+}
 
 // Char User
 var gambar = $("<img/>", {
@@ -87,10 +99,6 @@ var eatBarIntv = setInterval(penguranganEatBar, 1000);
 var healthBarIntv = setInterval(penguranganHealthBar, 1000);
 var gameBarIntv = setInterval(penguranganGameBar, 1000);
 var sleepBarIntv = setInterval(penguranganSleepBar, 1500);
-
-$(".btnGame").click(function () {
-  window.location.href = "game.html";
-});
 
 $(".btnEat").click(function () {
   eatBar = eatBar + 20;
@@ -240,13 +248,26 @@ function penguranganHealthBar() {
     clearInterval(gameBarIntv);
     clearInterval(sleepBarIntv);
     clearInterval(intervalClock);
-    alert("You Die!!!!!");
+    alert("You're Pet Die!!!!!");
+    audio.pause();
     $("#healthBar").attr("style", "width: " + 0 + "%");
     $("#statsEat").attr("style", "width: " + 0 + "%");
     $("#gameBar").attr("style", "width: " + 0 + "%");
     $("#sleepBar").attr("style", "width: " + 0 + "%");
   }
 }
+
+$(".btnGame").click(function () {
+  localStorage.setItem("gameStat", gameBar);
+  localStorage.setItem("eatStat", eatBar);
+  localStorage.setItem("sleepStat", sleepBar);
+  localStorage.setItem("level", level);
+  localStorage.setItem("keterangan", keterangan);
+  localStorage.setItem("hours", hours);
+  localStorage.setItem("minutes", minutes);
+  localStorage.setItem("day", hariBertahan);
+  window.location.href = "game.html";
+});
 
 const btnSound = document.getElementById("btnSound");
 const audio = document.getElementById("audio");
