@@ -17,6 +17,7 @@ The Project For MidTerm Exam (Introduction To Internet Technology) - H - LEC
 <p><b>5. Penambahan & Pengurangan Bar Status Pemain</b></br>(Bar status pemain akan bertambah/berkurang ketika pemain sedang melakukan aktivitas)</p>
 <p><b>6. Background Berubah Sesuai Jam</b></br>(Background permainan akan berubah sesuai dengan waktu yang ditentukan oleh kami, seperti ketika saat jam 21:00 background akan menjadi malam)</p>
 <p><b>7. Bermain</b></br>(Untuk penambahan bar Game)</p>
+<p><b>8. Background Music</b></br>(Pemain bisa menonaktifkan dan mengaktifkan musik melalui tombol yang tersedia))</p>
 
 <h2>Batasan:</h2>
 <p><b>1. Jumlah Avatar</b></br>(Pemain hanya dapat memilih 3 Avatar)</p>
