@@ -1,20 +1,19 @@
 var pilihanUser = localStorage.getItem("pilihanUser");
 var namaPet = localStorage.getItem("namaPet");
-var eatBar = 100;
-var sleepBar = 100;
-var gameBar = 100;
+var eatBar = 50;
+var sleepBar = 50;
+var gameBar = 50;
 var healthBar = 100;
 var minutes = 0;
 var hours = 0;
 var hariBertahan = 0;
 var level = 1;
-var keterangan = "Baby";
-var tesVar = 700;
+var keterangan = "Bayi";
 
 // Char User
 var gambar = $("<img/>", {
   class: "imagePilihan",
-  src: "Asset/img/Character/Bayi_" + pilihanUser + ".svg",
+  src: "Asset/img/Character/" + keterangan + "_" + pilihanUser + ".svg",
 });
 $(".charPilihan").append(gambar);
 
@@ -33,18 +32,20 @@ function clock() {
   if (hours === 24) {
     hours = 0;
     hariBertahan++;
+    if (hariBertahan > 0 && hariBertahan < 2) {
+      keterangan = "Anak";
+    } else if (hariBertahan > 2) {
+      keterangan = "Dewasa";
+    }
+    $(".imagePilihan").attr("src", "Asset/img/Character/" + keterangan + "_" + pilihanUser + ".svg");
   }
-
   if (hariBertahan > 0 && hariBertahan < 2) {
     level = 2;
-    keterangan = "Anak";
-    $(".levelUser").text("Level " + level + " - " + keterangan);
-    $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + ".svg");
+    $(".levelUser").text("Level " + level + " - " + keterangan + " " + "(Day " + (hariBertahan + 1) + ")");
   } else if (hariBertahan > 2) {
     level = 3;
     keterangan = "Dewasa";
-    $(".levelUser").text("Level " + level + " - " + keterangan);
-    $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + ".svg");
+    $(".levelUser").text("Level " + level + " - " + keterangan + " " + "(Day " + (hariBertahan + 1) + ")");
   }
 
   var textWaktu = hours.toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0");
@@ -81,8 +82,6 @@ function clock() {
   }
 }
 
-// Code Dibawah ga jalan???????
-
 var intervalClock = setInterval(clock, 100);
 var eatBarIntv = setInterval(penguranganEatBar, 1000);
 var healthBarIntv = setInterval(penguranganHealthBar, 1000);
@@ -93,11 +92,35 @@ $(".btnEat").click(function () {
   eatBar = eatBar + 20;
   if (eatBar > 100) {
     eatBar = 101;
-    alert("Sudah Kenyang");
     $("#statsEat").attr("style", "width: " + eatBar + "%; transition: 0.5s ease-in-out;");
+    alert("Sudah Kenyang");
   } else {
     $("#statsEat").attr("style", "width: " + eatBar + "%; transition: 0.5s ease-in-out;");
   }
+  if (level === 1) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + "_Eat" + ".svg");
+  }
+  if (level === 2) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + "_Eat" + ".svg");
+  }
+  if (level === 3) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + "_Eat" + ".svg");
+  }
+  $("#btnEat").addClass("disabled");
+  let cepetMakan = setInterval(clock, 10);
+  setTimeout(function () {
+    if (level === 1) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + ".svg");
+    } else if (level === 2) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + ".svg");
+    } else {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + ".svg");
+    }
+    clearInterval(cepetMakan);
+    let backMakan = setInterval(clock, 100);
+    clearInterval(backMakan);
+    $("#btnEat").removeClass("disabled");
+  }, 500);
 });
 
 function penguranganEatBar() {
@@ -105,7 +128,6 @@ function penguranganEatBar() {
     eatBar = eatBar - 1;
   } else if (level === 2) {
     eatBar = eatBar - 2;
-    testVar = 10;
   } else {
     eatBar = eatBar - 3;
   }
@@ -117,8 +139,31 @@ function penguranganEatBar() {
 
 $(".btnSleep").click(function () {
   sleepBar = 101;
-  alert("Sudah Puas Tidur");
-  $("#sleepBar").attr("style", "width: " + sleepBar + "%; transition: 0.5s ease-in-out;");
+  $("#sleepBar").attr("style", "width: " + sleepBar + "%; transition: 5s ease-in-out;");
+  if (level === 1) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + "_Tidur" + ".svg");
+  } else if (level === 2) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + "_Tidur" + ".svg");
+    console.log("Hello World");
+  } else {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + "_Tidur" + ".svg");
+  }
+  $("#btnSleep").addClass("disabled");
+  let cepetTidur = setInterval(clock, 10);
+  setTimeout(function () {
+    if (level === 1) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + ".svg");
+    } else if (level === 2) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + ".svg");
+      console.log("Hello World");
+    } else {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + ".svg");
+    }
+    clearInterval(cepetTidur);
+    let backTidur = setInterval(clock, 100);
+    clearInterval(backTidur);
+    $("#btnSleep").removeClass("disabled");
+  }, 5000);
 });
 
 function penguranganSleepBar() {
@@ -145,7 +190,31 @@ function penguranganGameBar() {
 
 $(".btnHeal").click(function () {
   healthBar = healthBar + 20;
-  $("#healthBar").attr("style", "width: " + healthBar + "%");
+  $("#healthBar").attr("style", "width: " + healthBar + "%; transition: 1s ease-in-out;");
+  if (level === 1) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + "_Heal" + ".svg");
+  } else if (level === 2) {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + "_Heal" + ".svg");
+    console.log("Hello World");
+  } else {
+    $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + "_Heal" + ".svg");
+  }
+  $("#btnHeal").addClass("disabled");
+  let cepetHealth = setInterval(clock, 10);
+  setTimeout(function () {
+    if (level === 1) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Bayi_" + pilihanUser + ".svg");
+    } else if (level === 2) {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Anak_" + pilihanUser + ".svg");
+      console.log("Hello World");
+    } else {
+      $(".imagePilihan").attr("src", "Asset/img/Character/Dewasa_" + pilihanUser + ".svg");
+    }
+    clearInterval(cepetHealth);
+    let backHealth = setInterval(clock, 100);
+    clearInterval(backHealth);
+    $("#btnHeal").removeClass("disabled");
+  }, 1000);
 });
 
 function penguranganHealthBar() {
