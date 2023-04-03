@@ -16,6 +16,16 @@
   }
 }
 
+#star{
+  width: 50px;
+ 
+}
+
+#char{
+  width: 50px;
+  position: absolute;
+}
+
 #btnSound.sound-on img {
   content: url("Asset/soundOn.png");
 }
