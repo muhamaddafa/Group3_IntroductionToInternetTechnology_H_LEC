@@ -8,6 +8,7 @@ The Project For MidTerm Exam (Introduction To Internet Technology) - H - LEC
 5. Rich Marvin Lim (00000079061)
 
 <h1>UMN Gotcha Game (Fitur dan Batasan)</h1>
+<a>https://muhamaddafa.github.io/Group3_IntroductionToInternetTechnology_H_LEC/home.html</a>
 
 <h2>Fitur:</h2> 
 <p><b>1. Pemilihan Avatar</b></br>(Pemain dapat memilih hewan peliharaan yang diinginkan)</p>
